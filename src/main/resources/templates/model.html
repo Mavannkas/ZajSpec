@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+
+<body>
+    <ul th:each="object: ${objects}">
+        <li th:text="${object.getName()} + '|' + ${object.getColor()} + '|' + ${object.getHeight()} + '|' + ${object.getWeight()}" ></li>
+    </ul>
+</body>
+</html>

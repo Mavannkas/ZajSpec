@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+
+<body>
+<form method="POST" action="">
+    <label for="name">Imię:</label>
+    <input type="text" id="name" name="name" th:value="${userRequest != null ? userRequest.getName() : ''}"><br>
+    <p th:if="${isNameValid != null && !isNameValid}">Imię za krótkie</p>
+    <label for="surname">Nazwisko:</label>
+    <input type="text" id="surname" name="surname" th:value="${userRequest != null ? userRequest.getSurname(): ''}"><br>
+    <p th:if="${isSurnameValid != null && !isSurnameValid}">Nazwisko za krótkie</p>
+
+    <label for="age">Wiek:</label>
+    <input type="number" id="age" name="age" th:value="${userRequest != null ? userRequest.getAge(): ''}"><br>
+    <p th:if="${isAgeValid != null &&  !isAgeValid}">Za młody</p>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" th:value="${userRequest != null ? userRequest.getEmail(): ''}"><br>
+    <p th:if="${isEmailValid != null && isEmailValid}">Zły email</p>
+
+    <input type="submit" value="Wyślij">
+</form>
+</body>
+</html>
